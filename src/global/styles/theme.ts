@@ -18,6 +18,7 @@ export default {
 	},
 
 	fonts: {
-		regular: 'BebasNeue_400Regular',
+		roboto: 'Roboto_400Regular',
+		bebas: 'BebasNeue_400Regular',
 	},
 };
