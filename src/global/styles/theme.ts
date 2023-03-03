@@ -16,4 +16,8 @@ export default {
 		white: '#FFFFFF',
 		black: '#000000',
 	},
+
+	fonts: {
+		regular: 'BebasNeue_400Regular',
+	},
 };
