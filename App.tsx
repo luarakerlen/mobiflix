@@ -3,7 +3,7 @@ import AppLoading from 'expo-app-loading';
 import theme from './src/global/styles/theme';
 import { ThemeProvider } from 'styled-components';
 import { StatusBar } from 'expo-status-bar';
-import { Home } from './src/screens/Home';
+import { Home } from './src/screens';
 import { useFonts, BebasNeue_400Regular } from '@expo-google-fonts/bebas-neue';
 import { Roboto_400Regular } from '@expo-google-fonts/roboto';
 

@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { AddButton } from '../../components';
 
 export const HomeContainer = styled.View`
 	flex: 1;
@@ -75,4 +76,10 @@ export const VideosList = styled.ScrollView`
 export const VideoContent = styled(BannerContainer)`
 	margin-top: 8px;
 	padding: 0;
+`;
+
+export const AddButtonContainer = styled.View`
+	position: absolute;
+	bottom: 48px;
+	right: 16px;
 `;

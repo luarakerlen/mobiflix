@@ -1,7 +1,8 @@
 import React from 'react';
 import { Image, View } from 'react-native';
-import { Tag, TagProps } from '../../components/Tag';
+import { AddButton, Tag, TagProps } from '../../components';
 import {
+	AddButtonContainer,
 	BannerContainer,
 	ButtonText,
 	Content,
@@ -104,6 +105,9 @@ export function Home() {
 					})}
 				</VideosList>
 			</Content>
+			<AddButtonContainer>
+				<AddButton />
+			</AddButtonContainer>
 		</HomeContainer>
 	);
 }
