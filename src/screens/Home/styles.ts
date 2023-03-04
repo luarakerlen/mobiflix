@@ -24,13 +24,14 @@ export const Title = styled.Text`
 export const Content = styled.View`
 	flex: 1;
 	width: 100%;
-	padding: 8px 32px 0;
+	padding: 8px 0 0;
 `;
 
 export const BannerContainer = styled.View`
 	height: 192px;
 	width: 100%;
 	margin-bottom: 24px;
+	padding: 0 32px;
 `;
 
 export const WatchButton = styled.TouchableOpacity`
@@ -53,7 +54,7 @@ export const ButtonText = styled.Text`
 `;
 
 export const TagsContainer = styled.View`
-	padding-bottom: 16px;
+	padding: 0 32px 16px;
 	border-bottom-color: ${(props) => props.theme.colors['gray-300']};
 	border-bottom-width: 1px;
 `;
@@ -67,10 +68,11 @@ export const TagContent = styled.View`
 `;
 
 export const VideosList = styled.ScrollView`
-	padding-top: 16px;
+	padding: 16px 32px 0;
 	margin-bottom: 64px;
 `;
 
 export const VideoContent = styled(BannerContainer)`
 	margin-top: 8px;
+	padding: 0;
 `;
