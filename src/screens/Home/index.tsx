@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Image, Text } from 'react-native';
+import { Button, Image, Text, View } from 'react-native';
 import { Tag, TagProps } from '../../components/Tag';
 import theme from '../../global/styles/theme';
 import {
@@ -8,6 +8,7 @@ import {
 	Content,
 	Header,
 	HomeContainer,
+	TagContent,
 	TagsList,
 	Title,
 	VideosList,
@@ -40,11 +41,17 @@ export function Home() {
 						<ButtonText>Assista agora</ButtonText>
 					</WatchButton>
 				</BannerContainer>
-				<TagsList>
-					{tags.map((tag) => {
-						return <Tag key={tag.name} tag={tag} />;
-					})}
-				</TagsList>
+				<View>
+					<TagsList horizontal={true} showsHorizontalScrollIndicator={false}>
+						{tags.map((tag) => {
+							return (
+								<TagContent>
+									<Tag key={tag.name} tag={tag} />
+								</TagContent>
+							);
+						})}
+					</TagsList>
+				</View>
 				<VideosList></VideosList>
 			</Content>
 		</HomeContainer>

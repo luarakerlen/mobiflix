@@ -51,10 +51,13 @@ export const ButtonText = styled.Text`
 	color: ${(props) => props.theme.colors.white};
 `;
 
-export const TagsList = styled.View`
-	flex-direction: row;
-	gap: 16px;
+export const TagsList = styled.ScrollView`
 	margin: 24px 0;
+	overflow: visible;
+`;
+
+export const TagContent = styled.View`
+	margin-right: 16px;
 `;
 
 export const VideosList = styled.View``;
