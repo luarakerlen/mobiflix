@@ -1,5 +1,7 @@
 import React from 'react';
 import { Button, Image, Text } from 'react-native';
+import { Tag, TagProps } from '../../components/Tag';
+import theme from '../../global/styles/theme';
 import {
 	BannerContainer,
 	ButtonText,
@@ -13,6 +15,14 @@ import {
 } from './styles';
 
 export function Home() {
+	const tags: TagProps[] = [
+		{ name: 'Gameplay', color: 'blue-500' },
+		{ name: 'Regras', color: 'red' },
+		{ name: 'Unboxing', color: 'black' },
+		{ name: 'Jogo rápido', color: 'green' },
+		{ name: 'Jogo solo', color: 'purple-500' },
+	];
+
 	return (
 		<HomeContainer>
 			<Header>
@@ -30,7 +40,11 @@ export function Home() {
 						<ButtonText>Assista agora</ButtonText>
 					</WatchButton>
 				</BannerContainer>
-				<TagsList></TagsList>
+				<TagsList>
+					{tags.map((tag) => {
+						return <Tag key={tag.name} tag={tag} />;
+					})}
+				</TagsList>
 				<VideosList></VideosList>
 			</Content>
 		</HomeContainer>

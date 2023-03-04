@@ -36,11 +36,11 @@ export const WatchButton = styled.TouchableOpacity`
 	align-self: center;
 	width: 50%;
 	padding: 16px 8px;
-  border-radius: 8px;
+	border-radius: 8px;
 	background-color: ${(props) => props.theme.colors['blue-500']};
 
-  position: absolute;
-  bottom: 10px;
+	position: absolute;
+	bottom: 10px;
 `;
 
 export const ButtonText = styled.Text`
@@ -51,7 +51,11 @@ export const ButtonText = styled.Text`
 	color: ${(props) => props.theme.colors.white};
 `;
 
-export const TagsList = styled.View``;
+export const TagsList = styled.View`
+	flex-direction: row;
+	gap: 16px;
+	margin: 24px 0;
+`;
 
 export const VideosList = styled.View``;
 
