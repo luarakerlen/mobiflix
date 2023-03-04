@@ -1,7 +1,6 @@
 import React from 'react';
-import { Button, Image, Text, View } from 'react-native';
+import { Image, View } from 'react-native';
 import { Tag, TagProps } from '../../components/Tag';
-import theme from '../../global/styles/theme';
 import {
 	BannerContainer,
 	ButtonText,
@@ -9,8 +8,10 @@ import {
 	Header,
 	HomeContainer,
 	TagContent,
+	TagsContainer,
 	TagsList,
 	Title,
+	VideoContent,
 	VideosList,
 	WatchButton,
 } from './styles';
@@ -24,6 +25,26 @@ export function Home() {
 		{ name: 'Jogo solo', color: 'purple-500' },
 	];
 
+	const videos = [
+		{
+			src: 'https://www.youtube.com/watch?v=mDtif_o7DiQ',
+			thumbnailSrc: 'https://img.youtube.com/vi/mDtif_o7DiQ/hqdefault.jpg',
+			tags: ['Gameplay', 'Regras'],
+		},
+		{
+			src: 'https://www.youtube.com/watch?v=EDeN7w31_a8',
+			thumbnailSrc: 'https://img.youtube.com/vi/EDeN7w31_a8/hqdefault.jpg',
+			tags: ['Regras', 'Jogo rápido'],
+		},
+		{
+			src: 'https://www.youtube.com/watch?v=z9_B9KjavPo',
+			thumbnailSrc: 'https://img.youtube.com/vi/z9_B9KjavPo/hqdefault.jpg',
+			tags: ['Unboxing'],
+		},
+	];
+
+	const defaultTag: TagProps = { name: '', color: 'gray-500' };
+
 	return (
 		<HomeContainer>
 			<Header>
@@ -34,14 +55,14 @@ export function Home() {
 					<Image
 						style={{ width: '100%', height: '100%' }}
 						source={{
-							uri: 'https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80',
+							uri: 'https://img.youtube.com/vi/EDeN7w31_a8/hqdefault.jpg',
 						}}
 					/>
 					<WatchButton onPress={() => {}}>
 						<ButtonText>Assista agora</ButtonText>
 					</WatchButton>
 				</BannerContainer>
-				<View>
+				<TagsContainer>
 					<TagsList horizontal={true} showsHorizontalScrollIndicator={false}>
 						{tags.map((tag) => {
 							return (
@@ -51,8 +72,37 @@ export function Home() {
 							);
 						})}
 					</TagsList>
-				</View>
-				<VideosList></VideosList>
+				</TagsContainer>
+				<VideosList showsVerticalScrollIndicator={false}>
+					{videos.map((video) => {
+						return (
+							<View>
+								<TagsList
+									horizontal={true}
+									showsHorizontalScrollIndicator={false}
+								>
+									{video.tags.map((videoTag) => {
+										const tag =
+											tags.find((tag) => tag.name === videoTag) || defaultTag;
+										return (
+											<TagContent>
+												<Tag key={tag.name} tag={tag} />
+											</TagContent>
+										);
+									})}
+								</TagsList>
+								<VideoContent>
+									<Image
+										style={{ width: '100%', height: '100%' }}
+										source={{
+											uri: video.thumbnailSrc,
+										}}
+									/>
+								</VideoContent>
+							</View>
+						);
+					})}
+				</VideosList>
 			</Content>
 		</HomeContainer>
 	);

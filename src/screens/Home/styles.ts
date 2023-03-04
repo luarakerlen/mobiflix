@@ -30,6 +30,7 @@ export const Content = styled.View`
 export const BannerContainer = styled.View`
 	height: 192px;
 	width: 100%;
+	margin-bottom: 24px;
 `;
 
 export const WatchButton = styled.TouchableOpacity`
@@ -51,8 +52,13 @@ export const ButtonText = styled.Text`
 	color: ${(props) => props.theme.colors.white};
 `;
 
+export const TagsContainer = styled.View`
+	padding-bottom: 16px;
+	border-bottom-color: ${(props) => props.theme.colors['gray-300']};
+	border-bottom-width: 1px;
+`;
+
 export const TagsList = styled.ScrollView`
-	margin: 24px 0;
 	overflow: visible;
 `;
 
@@ -60,6 +66,11 @@ export const TagContent = styled.View`
 	margin-right: 16px;
 `;
 
-export const VideosList = styled.View``;
+export const VideosList = styled.ScrollView`
+	padding-top: 16px;
+	margin-bottom: 64px;
+`;
 
-export const VideoContainer = styled.View``;
+export const VideoContent = styled(BannerContainer)`
+	margin-top: 8px;
+`;
