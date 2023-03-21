@@ -53,20 +53,6 @@ export const ButtonText = styled.Text`
 	color: ${(props) => props.theme.colors.white};
 `;
 
-export const TagsContainer = styled.View`
-	padding: 0 32px 16px;
-	border-bottom-color: ${(props) => props.theme.colors['gray-300']};
-	border-bottom-width: 1px;
-`;
-
-export const TagsList = styled.ScrollView`
-	overflow: visible;
-`;
-
-export const TagContent = styled.View`
-	margin-right: 16px;
-`;
-
 export const AddButtonContainer = styled.View`
 	position: absolute;
 	bottom: 48px;

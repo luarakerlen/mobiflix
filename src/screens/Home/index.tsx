@@ -1,9 +1,8 @@
 import React from 'react';
 import { Image } from 'react-native';
 import { AddButton } from '../../components/AddButton';
-import { Tag } from '../../components/Tag';
+import { TagsList } from '../../components/TagsList';
 import { VideosList } from '../../components/VideosList';
-import { tags } from '../../data/tags';
 import {
 	AddButtonContainer,
 	BannerContainer,
@@ -11,9 +10,6 @@ import {
 	Content,
 	Header,
 	HomeContainer,
-	TagContent,
-	TagsContainer,
-	TagsList,
 	Title,
 	WatchButton,
 } from './styles';
@@ -36,17 +32,7 @@ export function Home() {
 						<ButtonText>Assista agora</ButtonText>
 					</WatchButton>
 				</BannerContainer>
-				<TagsContainer>
-					<TagsList horizontal={true} showsHorizontalScrollIndicator={false}>
-						{tags.map((tag) => {
-							return (
-								<TagContent key={tag.name}>
-									<Tag key={tag.name} tag={tag} />
-								</TagContent>
-							);
-						})}
-					</TagsList>
-				</TagsContainer>
+				<TagsList />
 				<VideosList />
 			</Content>
 			<AddButtonContainer>
