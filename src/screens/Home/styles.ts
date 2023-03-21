@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import { AddButton } from '../../components';
 
 export const HomeContainer = styled.View`
 	flex: 1;
@@ -66,16 +65,6 @@ export const TagsList = styled.ScrollView`
 
 export const TagContent = styled.View`
 	margin-right: 16px;
-`;
-
-export const VideosList = styled.ScrollView`
-	padding: 16px 32px 0;
-	margin-bottom: 64px;
-`;
-
-export const VideoContent = styled(BannerContainer)`
-	margin-top: 8px;
-	padding: 0;
 `;
 
 export const AddButtonContainer = styled.View`

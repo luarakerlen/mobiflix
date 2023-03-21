@@ -1,6 +1,9 @@
 import React from 'react';
-import { Image, View } from 'react-native';
-import { AddButton, Tag, TagProps } from '../../components';
+import { Image } from 'react-native';
+import { AddButton } from '../../components/AddButton';
+import { Tag } from '../../components/Tag';
+import { VideosList } from '../../components/VideosList';
+import { tags } from '../../data/tags';
 import {
 	AddButtonContainer,
 	BannerContainer,
@@ -12,40 +15,10 @@ import {
 	TagsContainer,
 	TagsList,
 	Title,
-	VideoContent,
-	VideosList,
 	WatchButton,
 } from './styles';
 
 export function Home() {
-	const tags: TagProps[] = [
-		{ name: 'Gameplay', color: 'blue-500' },
-		{ name: 'Regras', color: 'red' },
-		{ name: 'Unboxing', color: 'black' },
-		{ name: 'Jogo rápido', color: 'green' },
-		{ name: 'Jogo solo', color: 'purple-500' },
-	];
-
-	const videos = [
-		{
-			src: 'https://www.youtube.com/watch?v=mDtif_o7DiQ',
-			thumbnailSrc: 'https://img.youtube.com/vi/mDtif_o7DiQ/hqdefault.jpg',
-			tags: ['Gameplay', 'Regras'],
-		},
-		{
-			src: 'https://www.youtube.com/watch?v=EDeN7w31_a8',
-			thumbnailSrc: 'https://img.youtube.com/vi/EDeN7w31_a8/hqdefault.jpg',
-			tags: ['Regras', 'Jogo rápido'],
-		},
-		{
-			src: 'https://www.youtube.com/watch?v=z9_B9KjavPo',
-			thumbnailSrc: 'https://img.youtube.com/vi/z9_B9KjavPo/hqdefault.jpg',
-			tags: ['Unboxing'],
-		},
-	];
-
-	const defaultTag: TagProps = { name: '', color: 'gray-500' };
-
 	return (
 		<HomeContainer>
 			<Header>
@@ -67,43 +40,14 @@ export function Home() {
 					<TagsList horizontal={true} showsHorizontalScrollIndicator={false}>
 						{tags.map((tag) => {
 							return (
-								<TagContent>
+								<TagContent key={tag.name}>
 									<Tag key={tag.name} tag={tag} />
 								</TagContent>
 							);
 						})}
 					</TagsList>
 				</TagsContainer>
-				<VideosList showsVerticalScrollIndicator={false}>
-					{videos.map((video) => {
-						return (
-							<View>
-								<TagsList
-									horizontal={true}
-									showsHorizontalScrollIndicator={false}
-								>
-									{video.tags.map((videoTag) => {
-										const tag =
-											tags.find((tag) => tag.name === videoTag) || defaultTag;
-										return (
-											<TagContent>
-												<Tag key={tag.name} tag={tag} />
-											</TagContent>
-										);
-									})}
-								</TagsList>
-								<VideoContent>
-									<Image
-										style={{ width: '100%', height: '100%' }}
-										source={{
-											uri: video.thumbnailSrc,
-										}}
-									/>
-								</VideoContent>
-							</View>
-						);
-					})}
-				</VideosList>
+				<VideosList />
 			</Content>
 			<AddButtonContainer>
 				<AddButton />
