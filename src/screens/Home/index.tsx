@@ -1,17 +1,14 @@
 import React from 'react';
-import { Image } from 'react-native';
 import { AddButton } from '../../components/AddButton';
+import { MainVideo } from '../../components/MainVideo';
 import { TagsList } from '../../components/TagsList';
 import { VideosList } from '../../components/VideosList';
 import {
 	AddButtonContainer,
-	BannerContainer,
-	ButtonText,
 	Content,
 	Header,
 	HomeContainer,
 	Title,
-	WatchButton,
 } from './styles';
 
 export function Home() {
@@ -21,17 +18,7 @@ export function Home() {
 				<Title>MOBIFLIX</Title>
 			</Header>
 			<Content>
-				<BannerContainer>
-					<Image
-						style={{ width: '100%', height: '100%' }}
-						source={{
-							uri: 'https://img.youtube.com/vi/EDeN7w31_a8/hqdefault.jpg',
-						}}
-					/>
-					<WatchButton onPress={() => {}}>
-						<ButtonText>Assista agora</ButtonText>
-					</WatchButton>
-				</BannerContainer>
+				<MainVideo />
 				<TagsList />
 				<VideosList />
 			</Content>

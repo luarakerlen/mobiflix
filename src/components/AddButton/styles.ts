@@ -6,5 +6,5 @@ export const AddButtonContainer = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
 	border-radius: 50%;
-	background-color: ${props => props.theme.colors['gray-300']};
+	background-color: ${props => props.theme.colors['blue-500']};
 `;
