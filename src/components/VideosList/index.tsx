@@ -1,11 +1,12 @@
 import React from 'react';
 import { View, Image } from 'react-native';
 import { tags } from '../../data/tags';
+import { VideoInterface } from '../../interfaces/video';
 import { Tag, TagProps } from '../Tag';
 import { Container, TagContent, TagsList, VideoContent } from './styles';
 
 export function VideosList() {
-	const videos = [
+	const videos: VideoInterface[] = [
 		{
 			src: 'https://www.youtube.com/watch?v=mDtif_o7DiQ',
 			thumbnailSrc: 'https://img.youtube.com/vi/mDtif_o7DiQ/hqdefault.jpg',

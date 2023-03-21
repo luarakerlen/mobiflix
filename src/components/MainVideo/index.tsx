@@ -1,17 +1,28 @@
 import React from 'react';
-import { Image } from 'react-native';
+import { Image, Linking } from 'react-native';
+import { VideoInterface } from '../../interfaces/video';
 import { ButtonText, Container, WatchButton } from './styles';
 
-export function MainVideo() {
+interface Props {
+	video: VideoInterface;
+}
+
+export function MainVideo({ video }: Props) {
+	function playVideoOnYouTube() {
+		Linking.openURL(video.src).catch((error) =>
+			console.error('Ocorreu um erro', error)
+		);
+	}
+
 	return (
 		<Container>
 			<Image
 				style={{ width: '100%', height: '100%' }}
 				source={{
-					uri: 'https://img.youtube.com/vi/EDeN7w31_a8/hqdefault.jpg',
+					uri: video.thumbnailSrc,
 				}}
 			/>
-			<WatchButton onPress={() => {}}>
+			<WatchButton onPress={playVideoOnYouTube}>
 				<ButtonText>Assista agora</ButtonText>
 			</WatchButton>
 		</Container>
