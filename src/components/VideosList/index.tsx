@@ -5,7 +5,11 @@ import { VideoInterface } from '../../interfaces/video';
 import { Tag, TagProps } from '../Tag';
 import { Container, TagContent, TagsList, VideoContent } from './styles';
 
-export function VideosList() {
+interface Props {
+	setMainVideo: (video: VideoInterface) => void
+}
+
+export function VideosList({setMainVideo}: Props) {
 	const videos: VideoInterface[] = [
 		{
 			src: 'https://www.youtube.com/watch?v=mDtif_o7DiQ',
@@ -42,7 +46,7 @@ export function VideosList() {
 								);
 							})}
 						</TagsList>
-						<VideoContent>
+						<VideoContent onPress={() => setMainVideo(video)}>
 							<Image
 								style={{ width: '100%', height: '100%' }}
 								source={{

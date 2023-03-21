@@ -13,7 +13,7 @@ export const TagContent = styled.View`
 	margin-right: 16px;
 `;
 
-export const VideoContent = styled.View`
+export const VideoContent = styled.TouchableOpacity`
 	height: 192px;
 	width: 100%;
 	margin-bottom: 24px;

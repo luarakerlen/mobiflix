@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AddButton } from '../../components/AddButton';
 import { MainVideo } from '../../components/MainVideo';
 import { TagsList } from '../../components/TagsList';
 import { VideosList } from '../../components/VideosList';
+import { VideoInterface } from '../../interfaces/video';
 import {
 	AddButtonContainer,
 	Content,
@@ -18,15 +19,21 @@ export function Home() {
 		tags: ['Gameplay', 'Regras'],
 	};
 
+	const [mainVideo, setMainVideo] = useState<VideoInterface>(videoTeste);
+
+	function setMainVideoFunction(video: VideoInterface) {
+		setMainVideo(video);
+	}
+
 	return (
 		<HomeContainer>
 			<Header>
 				<Title>MOBIFLIX</Title>
 			</Header>
 			<Content>
-				<MainVideo video={videoTeste} />
+				<MainVideo video={mainVideo} />
 				<TagsList />
-				<VideosList />
+				<VideosList setMainVideo={setMainVideoFunction} />
 			</Content>
 			<AddButtonContainer>
 				<AddButton />
